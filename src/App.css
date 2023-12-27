@@ -1,0 +1,56 @@
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 90vh;
+  background-color: #88888834;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.form input,button{
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+.form input{
+  border: 1px solid #fff;
+  width: 300px;
+}
+.form button{
+  width: 325px;
+  background-color: #9000ffb6;
+  cursor: pointer;
+  transition: .5s;
+  
+}
+.form button:hover{
+  filter: brightness(.9);
+}
+.form p{
+  color: #8888886c;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.container{
+  display: flex;
+  width: 90vw;
+  gap: 10px;
+  padding: 10px;
+}
+.cont_list{
+  width: 50%;
+  overflow: auto;
+  color: #9000ffb6;
+}
