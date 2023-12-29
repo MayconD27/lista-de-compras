@@ -5,19 +5,27 @@ import { List } from './components/List'
 function App() {
   const [item, setItem] = useState('')
   const [itens, setItems] = useState([])
+
+  //pega o nome do item
   function pegaNome(e){
     setItem(e.target.value)
     
   }
+
+  //Envia para o banco de dados
   function enviar (){
     fetch('http://localhost/lista/src/php/insert.php',{
       method:'POST',
+      //configura o cabeçalho como um json
       headers:{
         'Content-Type': 'application/json' 
       },
+      //converte o item para uma string para o ser incorporada no json
       body:JSON.stringify({item})
     })
     alert('item adicionado')
+    document.querySelector('#input').value = ''
+
   }
 
   async function select (){
@@ -43,7 +51,7 @@ function App() {
     <div className="form">
     <h2>Lista de compra</h2>
       <label htmlFor="">Nome</label>
-      <input type="text" name="" id="" onChange={pegaNome}/>
+      <input type="text" name="" id="input" onChange={pegaNome}/>
       <button onClick={enviar}>Cadastrar</button>
       <p>*cadastre itens a lista de compras</p>
     </div>
@@ -52,9 +60,7 @@ function App() {
       <h2>itens adicionados</h2>
       
         {itens.map((item)=>(
-          <List key={item.id} nome={item.nome}/>
-
-          //<li key={item.id}>{item.nome}</li>
+          <List key={item.id} id={item.id} nome={item.nome}/>
         ))}
     </div>
     </div>

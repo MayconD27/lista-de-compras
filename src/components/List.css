@@ -5,4 +5,9 @@
     border-radius: 5px;
     margin: 5px 0;
     color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+.lista a{
+    color: #9000ffb6;
 }
